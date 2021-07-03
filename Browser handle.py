@@ -1,0 +1,28 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+
+driver=webdriver.Chrome(executable_path="C:\Drivers\chromedriver.exe")
+driver.get("http://demo.automationtesting.in/Windows.html")
+
+driver.find_element_by_xpath("//*[@id='Tabbed']/a/button").click()
+print(driver.current_window_handle)                                        #parent window
+
+hanldes=driver.current_window_handles
+
+for handle in handles:
+   driver.switch.to.window(handle)
+   print(driver.title)
+
+
+driver.quit()
+
+
+
+
+
+
+
+
+
+
